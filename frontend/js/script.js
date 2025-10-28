@@ -1,5 +1,5 @@
-// Usar ruta relativa
-const API_BASE = '/api';
+// URL base del API - Backend en Azure App Service
+const API_BASE = 'https://rapido-express-backend.azurewebsites.net/api';
 
 // Elementos del DOM
 const clienteSelect = document.getElementById('cliente');

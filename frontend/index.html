@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rápido Express - Registro de Envíos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Rápido Express</h1>
+            <h2>Registro de Envíos</h2>
+        </div>
+
+        <div class="form-container">
+            <!-- Alertas -->
+            <div id="alert" class="alert"></div>
+
+            <form id="envioForm">
+                <!-- Cliente -->
+                <div class="form-group">
+                    <label for="cliente">Cliente</label>
+                    <select id="cliente" name="cliente" required>
+                        <option value="">Seleccione un cliente...</option>
+                    </select>
+                </div>
+
+                <!-- Estado -->
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado" required>
+                        <option value="">Seleccione un estado...</option>
+                    </select>
+                </div>
+
+                <!-- Ciudad -->
+                <div class="form-group">
+                    <label for="ciudad">Ciudad</label>
+                    <select id="ciudad" name="ciudad" required disabled>
+                        <option value="">Primero seleccione un estado...</option>
+                    </select>
+                </div>
+
+                <!-- Descripción -->
+                <div class="form-group">
+                    <label for="descripcion">Descripción del Paquete</label>
+                    <textarea 
+                        id="descripcion" 
+                        name="descripcion" 
+                        placeholder="Describa el contenido del paquete..." 
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="divider"></div>
+
+                <button type="submit" class="btn" id="btnRegistrar">
+                    Registrar Envío
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

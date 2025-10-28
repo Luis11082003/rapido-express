@@ -33,8 +33,8 @@ app.get('/status', (req, res) => {
         status: 'OK', 
         message: 'Servidor de Rápido Express funcionando',
         timestamp: new Date().toISOString(),
-        environment: process.env.NODEENV || 'development',
-        database: process.env.DBNAME || 'rapido_express',
+        environment: process.env.nodeenv || 'development',
+        database: process.env.dbname || 'rapido_express',
         port: PORT
     });
 });
@@ -59,15 +59,15 @@ app.use((err, req, res, next) => {
     res.status(500).json({ 
         success: false,
         error: 'Error interno del servidor',
-        message: process.env.NODEENV === 'development' ? err.message : 'Error interno del servidor'
+        message: process.env.nodeenv === 'development' ? err.message : 'Error interno del servidor'
     });
 });
 
 // IMPORTANTE para Azure escuchar en '0.0.0.0'
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor corriendo en puerto: ${PORT}`);
-    console.log(`Entorno: ${process.env.NODEENV || 'development'}`);
-    console.log(`Base de datos: ${process.env.DBNAME || 'rapido_express'}`);
+    console.log(`Entorno: ${process.env.nodeenv || 'development'}`);
+    console.log(`Base de datos: ${process.env.dbname || 'rapido_express'}`);
     console.log('Frontend servido desde: ../frontend');
     console.log('API disponible en: /api/*');
     console.log('Status check: /status');
